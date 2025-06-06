@@ -92,12 +92,8 @@
         priceValue.textContent = `${rangeInput.value} zł`;
   });
 
-
-  const rangeInput2 = document.getElementById('price-range');
-  const priceValue2 = document.getElementById('price-value');
-
-  rangeInput2.addEventListener('input', () => {
-    priceValue2.textContent = `${rangeInput2.value} zł`;
+  rangeInput.addEventListener('input', () => {
+    priceValue.textContent = `${rangeInput.value} zł`;
   });
 
   // 🔥 Toggle filtrów na mobile

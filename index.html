@@ -14,6 +14,7 @@
   </section>
 
   <section class="funkcje" id="funkcje">
+    <button class="toggle-filters">Filtry ⬇️</button>
     <div class="filters">
         <div class="filters-elements">
             <h3>Wybierz filtry</h3>
@@ -72,7 +73,7 @@
                 <p>420zł</p>
             </div>
             <div class="product">
-                <img src="nikejew.jpg" alt="nowy model butów nikjews">gg
+                <img src="nikejew.jpg" alt="nowy model butów nikjews">
                 <p>AirJew 96</p>
                 <p>420zł</p>
             </div>
@@ -89,6 +90,25 @@
 
     rangeInput.addEventListener('input', () => {
         priceValue.textContent = `${rangeInput.value} zł`;
+  });
+
+
+  const rangeInput2 = document.getElementById('price-range');
+  const priceValue2 = document.getElementById('price-value');
+
+  rangeInput2.addEventListener('input', () => {
+    priceValue2.textContent = `${rangeInput2.value} zł`;
+  });
+
+  // 🔥 Toggle filtrów na mobile
+  const toggleButton = document.querySelector('.toggle-filters');
+  const filtersPanel = document.querySelector('.filters');
+
+  toggleButton.addEventListener('click', () => {
+    filtersPanel.classList.toggle('open');
+    toggleButton.textContent = filtersPanel.classList.contains('open')
+      ? 'Ukryj filtry ⬆️'
+      : 'Pokaż filtry ⬇️';
   });
 </script>
 

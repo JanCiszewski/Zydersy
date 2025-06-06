@@ -38,6 +38,17 @@ section {
   flex-direction: row;
 }
 
+.toggle-filters {
+  display: none;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  background: white;
+  color: #1b6dad;
+  cursor: pointer;
+}
 
 .filters{
     background-color: rgba(255, 255, 255, 0.3);
@@ -118,17 +129,17 @@ section {
 }
 
 .products-list {
-    display: flex;
+    display: grid;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 1rem;
+    width: 100%;
+    padding: 1rem;
     gap: 2rem;
+    align-items: center;
 }
 
 .product {
-    padding: 1rem;
-    min-width: 16%;
+    padding: 0.3rem;
+    max-width: 300px;
     background-color: rgba(37, 86, 179, 0.6);
     border-radius: 5px;
     box-shadow: 0 2px 5px 0 black;
@@ -136,9 +147,12 @@ section {
 
 .product img {
     width: 100%;
-    max-width: 400px;
     height: auto;
+    max-width: 100%;
     border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .product:hover{
@@ -160,15 +174,34 @@ section {
   background-color: #eee;
 }
 
+@media (min-width: 1000px){
+    .products-list {
+        grid-template-columns: repeat(3,1fr);
+        grid-auto-rows: auto;
+    }
+
+}
+
+@media (max-width: 999px){
+    .products-list {
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: auto;
+    }
+}
+
+
 @media (max-width: 768px) {
     .funkcje {
         flex-direction: column;
     }
     .filters{
-        width: 90vw;
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
         border-bottom-left-radius: 0;
+        display: none;
+        width: 100%;
+        border-radius: 0;
+        height: auto;
     }
 
     .products {
@@ -177,18 +210,23 @@ section {
         border-top-right-radius: 0;
         width: 90vw;
     }
+    .products-list {
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: auto;
+    }
 
     .product img {
         max-width: 130px;
         
     }
+
+    .toggle-filters {
+    display: block;
+  }
+
+  .filters.open {
+    display: block;
+  }
     
 }
 
-@media (max-width: 450px){
-        .product img {
-        max-width: 110px;
-        
-    }
-
-}

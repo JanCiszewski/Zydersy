@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Scroll</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="hero" id="hero">
+    <h1>Żydersy</h1>
+    <p>Buty dopsowane do genów!</p>
+    <a href="#funkcje" class="scroll-btn">Zobacz produkty</a>
+  </section>
+
+  <section class="funkcje" id="funkcje">
+    <div class="filters">
+        <div class="filters-elements">
+            <h3>Wybierz filtry</h3>
+            <div class="price">
+                <label for="price-range">Cena</label>
+                <input type="range" id="price-range" min="0" max="1000" step="10" value="500">
+                <span id="price-value">500 zł</span>
+            </div>
+            <div class="size">
+                <label for="size">Rozmiary: </label>
+                <select name="size" id="size">
+                    <option value="Wybeirz rozmiar">Wybierz rozmiar</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    <option value="46">46</option>
+                </select>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="products">
+        <div class="products-list">
+            <div class="product">
+                <img src="nikejew.jpg" alt="nowy model butów nikjews">
+                <p>AirJew Max</p>
+                <p>420zł</p>
+            </div>
+            <div class="product">
+                <img src="nikejew.jpg" alt="nowy model butów nikjews">
+                <p>AirJew One</p>
+                <p>420zł</p>
+            </div>
+            <div class="product">
+                <img src="nikejew.jpg" alt="nowy model butów nikjews">
+                <p>VaporJew</p>
+                <p>420zł</p>
+            </div>
+            <div class="product">
+                <img src="nikejew.jpg" alt="nowy model butów nikjews">
+                <p>Air JewDan</p>
+                <p>420zł</p>
+            </div>
+            <div class="product">
+                <img src="nikejew.jpg" alt="nowy model butów nikjews">
+                <p>Blazejewer</p>
+                <p>420zł</p>
+            </div>
+            <div class="product">
+                <img src="nikejew.jpg" alt="nowy model butów nikjews">gg
+                <p>AirJew 96</p>
+                <p>420zł</p>
+            </div>
+        </div>
+        
+    </div>
+
+    
+</body>
+
+<script>
+    const rangeInput = document.getElementById('price-range');
+    const priceValue = document.getElementById('price-value');
+
+    rangeInput.addEventListener('input', () => {
+        priceValue.textContent = `${rangeInput.value} zł`;
+  });
+</script>
+
+</html>
